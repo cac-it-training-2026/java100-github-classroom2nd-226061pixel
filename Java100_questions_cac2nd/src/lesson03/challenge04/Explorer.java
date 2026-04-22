@@ -64,9 +64,28 @@ public class Explorer {
 		int fullLength = 300;
 		int member = 0;
 
-
 		//ここにwhile文を利用した処理を記述
+		while (member < 5) {
+			//++を付けてもmemberが+1されなかったので配列を使用
+			int[] member2 = { 1, 2, 3, 4, 5 };
+			System.out.println("隊長：");
+			System.out.println(member2[member++] + "人目が渡り始めたよ\n");
+			fullLength = 300;
+			fullLength -= 50;
 
+			while (fullLength > 0) {
+				System.out.println("隊長：");
+				System.out.println("まだ渡ってるよ\n");
+				fullLength -= 50;
+
+				if (member < 5) {
+					continue;
+
+				}
+
+			}
+
+		}
 
 		System.out.println("全員渡り終わったよ！");
 

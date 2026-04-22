@@ -79,27 +79,62 @@ import java.io.InputStreamReader;
 
 public class Explorer {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        System.out.println("隊長：");
-        System.out.println("トラ発見！\n");
+		System.out.println("隊長：");
+		System.out.println("トラ発見！\n");
 
-        int deepSleepTime = (int) (Math.random() * 10 % 3) + 1;
-        int goTime = 0;
+		int deepSleepTime = (int) (Math.random() * 10 % 3) + 1;
+		int goTime = 0;
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+		//ここにfor文、if文を利用した処理を記述
 
-        //ここにfor文、if文を利用した処理を記述
+		for (int i = 0; goTime < 3; i++) {
+			System.out.println("隊長：");
+			System.out.println(++goTime + "時間経過。");
+			System.out.println("今通り抜けますか？　（はい… 1 : いいえ… その他のキー）＞");
 
+			String str = br.readLine();
+			int num = Integer.parseInt(str);
 
-        if (deepSleepTime == goTime) {
-            System.out.println("\n隊長：");
-            System.out.println("成功！トラはぐっすり寝ています。");
-        } else {
-            System.out.println("\n隊長：");
-            System.out.println("しまったトラがまだ起きてた！");
-        }
+			if (goTime == 2) {
+				System.out.println(++goTime + "時間経過。");
+				System.out.println("もう後がないんで通り抜けますよ。");
+				if (deepSleepTime == goTime) {
+					System.out.println("\n隊長：");
+					System.out.println("成功！トラはぐっすり寝ています。");
+					break;
+				} else {
+					System.out.println("\n隊長：");
+					System.out.println("しまったトラがまだ起きてた！");
+				}
+				//入力が1の場合
+				if (num == 1) {
+					if (deepSleepTime == goTime) {
+						System.out.println("\n隊長：");
+						System.out.println("成功！トラはぐっすり寝ています。");
+					} else {
+						System.out.println("\n隊長：");
+						System.out.println("しまったトラがまだ起きてた！");
+					}
+					//入力が１以外かつ経過時間が３以外の場合
+					if (num != 1 && goTime != 3) {
+						continue;
+					} else {
+						break;
 
-    }
+					}
+
+					//				if (deepSleepTime == goTime) {
+					//					System.out.println("\n隊長：");
+					//					System.out.println("成功！トラはぐっすり寝ています。");
+					//				} else {
+					//					System.out.println("\n隊長：");
+					//					System.out.println("しまったトラがまだ起きてた！");
+				}
+			}
+		}
+	}
 }
