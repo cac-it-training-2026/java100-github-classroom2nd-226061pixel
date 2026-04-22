@@ -82,17 +82,92 @@ public class Explorer {
 		int i = 0;
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+		alligator = (int) (Math.random() * 10 % 3) + 1;
 
 		//ここにwhile文、if文を利用した処理を記述
-
-
-		if (i == 3) {
+		while (i < 3) {
 			System.out.println("隊長：");
-			System.out.println("川を渡り切りました。");
-		} else {
-			System.out.println("通り抜けに失敗しました...");
-		}
+			System.out.println("どの手を出して通り抜けますか\n"
+					+ "（グー… 1 : チョキ… 2 : パー… 3）＞");
+			String handStr = br.readLine();
+			hand = Integer.parseInt(handStr);
 
+			if (hand == 1) {
+				if (alligator == 1 || alligator == 2) {
+					String kind;
+					if (alligator == 1) {
+						kind = "グーワニ";
+						System.out.println("\n隊長：");
+						System.out.println("相手は" + kind + "でした。");
+						System.out.println((i + 1) + "匹目通り抜け成功！\n");
+					} else {
+						kind = "チョキワニ";
+						System.out.println("\n隊長：");
+						System.out.println("相手は" + kind + "でした。");
+						break;
+					}
+				} else {
+					System.out.println("\n隊長：");
+					System.out.println("相手は：パーワニでした。");
+					System.out.println("通り抜けに失敗しました...");
+					break;
+
+				}
+			} else if (hand == 2) {
+				if (alligator == 2 || alligator == 3) {
+					String kind;
+					if (alligator == 2) {
+						kind = "チョキワニ";
+						System.out.println("\n隊長：");
+						System.out.println("相手は" + kind + "でした。");
+						System.out.println((i + 1) + "匹目通り抜け成功！\n");
+					} else {
+						kind = "パーワニ";
+						System.out.println("\n隊長：");
+						System.out.println("相手は" + kind + "でした。");
+						break;
+					}
+				} else {
+					System.out.println("\n隊長：");
+					System.out.println("相手は：グーワニでした。");
+					System.out.println("通り抜けに失敗しました...");
+					break;
+
+				}
+			} else if (hand == 3) {
+				if (alligator == 3 || alligator == 1) {
+					String kind;
+					if (alligator == 1) {
+						kind = "パーワニ";
+						System.out.println("\n隊長：");
+						System.out.println("相手は" + kind + "でした。");
+						System.out.println((i + 1) + "匹目通り抜け成功！\n");
+					} else {
+						kind = "グーワニ";
+						System.out.println("\n隊長：");
+						System.out.println("相手は" + kind + "でした。");
+						break;
+					}
+				} else {
+					System.out.println("\n隊長：");
+					System.out.println("相手は：チョキワニでした。");
+					System.out.println("通り抜けに失敗しました...");
+					break;
+
+				}
+			} else {
+				System.out.println("\n隊長：");
+				System.out.println("そんな手はありませんよ。もう一度入れてください。\n");
+				i--;
+			}
+			i++;
+
+			if (i == 3) {
+				System.out.println("隊長：");
+				System.out.println("川を渡り切りました。");
+			} else {
+				continue;
+			}
+		}
 	}
 }

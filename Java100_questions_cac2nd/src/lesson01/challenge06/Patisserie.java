@@ -33,7 +33,7 @@ public class Patisserie {
 		System.out.println("シトロン    >");
 		System.out.println("ショコラ　　>");
 		System.out.println("ピスタージュ>");
-
+		//準備
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 		String str1 = reader.readLine();

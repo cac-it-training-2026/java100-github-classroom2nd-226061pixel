@@ -23,6 +23,7 @@ package lesson01.challenge03;
 
 public class Patisserie {
 	public static void main(String[] args) {
+
 		System.out.println("本日のおすすめの商品です。");
 		int a = 30;
 		int b = 30;

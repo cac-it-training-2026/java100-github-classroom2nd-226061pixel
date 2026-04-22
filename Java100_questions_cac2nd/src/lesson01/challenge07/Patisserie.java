@@ -47,6 +47,7 @@ import java.io.InputStreamReader;
 
 public class Patisserie {
 	public static void main(String[] args) throws IOException {
+
 		System.out.println("たいへんお待たせしました。");
 		System.out.println("【ポエール・ネルメ】");
 		System.out.println("ただいまより開店です！！\n");

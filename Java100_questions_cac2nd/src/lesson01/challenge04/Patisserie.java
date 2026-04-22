@@ -34,6 +34,7 @@ import java.io.InputStreamReader;
 
 public class Patisserie {
 	public static void main(String[] args) throws IOException {
+
 		System.out.println("それぞれ何個ずつかいますか？(最大30個まで)");
 
 		System.out.println("シトロン    >");
